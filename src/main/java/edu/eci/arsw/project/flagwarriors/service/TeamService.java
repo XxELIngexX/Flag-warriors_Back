@@ -6,14 +6,13 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import edu.eci.arsw.project.flagwarriors.model.Team;
-import edu.eci.arsw.project.flagwarriors.repository.PlayerRepository;
 import edu.eci.arsw.project.flagwarriors.repository.TeamRepository;
 
 @Service
 public class TeamService {
     private final TeamRepository teamRepository;
  
-    public TeamService(TeamRepository teamRepository, PlayerRepository playerRepository) {
+    public TeamService(TeamRepository teamRepository) {
         this.teamRepository = teamRepository;
     }
 
