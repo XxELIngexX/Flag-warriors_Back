@@ -1,6 +1,5 @@
 package edu.eci.arsw.project.flagwarriors.model;
 
-import java.net.http.WebSocket;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

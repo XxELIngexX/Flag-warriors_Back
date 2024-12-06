@@ -1,10 +1,8 @@
 package edu.eci.arsw.project.flagwarriors.api;
 
-import java.io.BufferedReader;
-import java.io.IOException;
+
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,16 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-import edu.eci.arsw.project.flagwarriors.model.Player;
 import edu.eci.arsw.project.flagwarriors.model.Team;
-import edu.eci.arsw.project.flagwarriors.service.PlayerService;
 import edu.eci.arsw.project.flagwarriors.service.TeamService;
-import jakarta.servlet.http.HttpServletRequest;
 
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
@@ -35,7 +27,7 @@ public class TeamAPIController {
     public TeamAPIController(TeamService teamService) {
         this.teamService = teamService;
     }
-    
+
     @GetMapping
     public ResponseEntity<List<Team>> getAllTeams() {  // Cambiar el nombre del método
         List<Team> teams = teamService.getAllteams();
