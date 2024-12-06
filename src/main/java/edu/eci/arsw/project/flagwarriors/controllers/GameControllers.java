@@ -18,7 +18,7 @@ public class GameControllers {
        this.teamService = teamService;
        this.playerService = playerService;
    }
-    @RequestMapping(value = "/lobby", method = RequestMethod.GET)
+    @GetMapping("/lobby")
     public String iniciarJuego(){
         return "lobby";
     }
