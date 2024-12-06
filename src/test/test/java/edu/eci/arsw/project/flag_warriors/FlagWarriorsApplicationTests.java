@@ -8,6 +8,8 @@ class FlagWarriorsApplicationTests {
 
 	@Test
 	void contextLoads() {
+		throw new UnsupportedOperationException("Método no implementado");
+
 	}
 
 }
