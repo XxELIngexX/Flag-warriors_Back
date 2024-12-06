@@ -3,10 +3,8 @@ package edu.eci.arsw.project.flagwarriors.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.eci.arsw.project.flagwarriors.model.Player;
 import edu.eci.arsw.project.flagwarriors.model.Team;
 import edu.eci.arsw.project.flagwarriors.repository.PlayerRepository;
 import edu.eci.arsw.project.flagwarriors.repository.TeamRepository;
@@ -14,11 +12,9 @@ import edu.eci.arsw.project.flagwarriors.repository.TeamRepository;
 @Service
 public class TeamService {
     private final TeamRepository teamRepository;
-    private final PlayerRepository playerRepository;
  
     public TeamService(TeamRepository teamRepository, PlayerRepository playerRepository) {
         this.teamRepository = teamRepository;
-        this.playerRepository = playerRepository;
     }
 
     public Team getTeamById(Long id) {
