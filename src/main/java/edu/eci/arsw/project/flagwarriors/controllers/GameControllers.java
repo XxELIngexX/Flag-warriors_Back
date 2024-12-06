@@ -13,11 +13,13 @@ import edu.eci.arsw.project.flagwarriors.service.TeamService;
 @RestController
 @RequestMapping("/api/game")
 public class GameControllers {
-    @Autowired
-    private TeamService teamService;
-    @Autowired
-    private PlayerService playerService;
+   private final TeamService teamService;
+   private final PlayerService playerService;
 
+   public GameControllers(TeamService teamService, PlayerService playerService) {
+       this.teamService = teamService;
+       this.playerService = playerService;
+   }
     @RequestMapping(value = "/lobby", method = RequestMethod.GET)
     public String iniciarJuego(){
         return "lobby";

@@ -14,9 +14,11 @@ import edu.eci.arsw.project.flagwarriors.service.PlayerService;
 @RequestMapping("/api/players")
 public class PlayerAPIController {
 
-    @Autowired
-    private PlayerService playerService;
+    private final PlayerService playerService;
 
+    public PlayerAPIController(PlayerService playerService) {
+        this.playerService = playerService;
+    }
 
     @PostMapping
     public ResponseEntity<?> createPlayer(@RequestBody Player player) {

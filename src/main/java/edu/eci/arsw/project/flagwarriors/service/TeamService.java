@@ -13,19 +13,12 @@ import edu.eci.arsw.project.flagwarriors.repository.TeamRepository;
 
 @Service
 public class TeamService {
-    
-
-
-    @Autowired
-    private TeamRepository teamRepository;
-
-    @Autowired
-    private PlayerRepository playerRepository;
-
-    public Team CreateTeams(String name, String path) {
-        Team team = new Team(name,path);
-       
-        return teamRepository.save(team);
+    private final TeamRepository teamRepository;
+    private final PlayerRepository playerRepository;
+ 
+    public TeamService(TeamRepository teamRepository, PlayerRepository playerRepository) {
+        this.teamRepository = teamRepository;
+        this.playerRepository = playerRepository;
     }
 
     public Team getTeamById(Long id) {

@@ -30,9 +30,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/api/teams")
 public class TeamAPIController {
 
-    @Autowired
-    private TeamService teamService;
+    private final TeamService teamService;
 
+    public TeamAPIController(TeamService teamService) {
+        this.teamService = teamService;
+    }
+    
     @GetMapping
     public ResponseEntity<List<Team>> getAllTeams() {  // Cambiar el nombre del método
         List<Team> teams = teamService.getAllteams();

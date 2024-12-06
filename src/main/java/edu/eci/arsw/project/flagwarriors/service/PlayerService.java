@@ -14,12 +14,14 @@ import edu.eci.arsw.project.flagwarriors.repository.TeamRepository;
 @Service
 public class PlayerService {
 
-    @Autowired
-    PlayerRepository playerRepository;
-
-    @Autowired TeamRepository teamRepository;
-
+    private final PlayerRepository playerRepository;
+    private final TeamRepository teamRepository;
     private static int playerCount = 0;
+ 
+    public PlayerService(PlayerRepository playerRepository, TeamRepository teamRepository) {
+        this.playerRepository = playerRepository;
+        this.teamRepository = teamRepository; 
+    }
 
     public Player savePlayer(Player player) {
         System.out.println("antes de modificar"+player.toString());
