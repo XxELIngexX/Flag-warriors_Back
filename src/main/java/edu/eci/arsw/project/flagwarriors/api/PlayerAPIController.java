@@ -20,7 +20,7 @@ public class PlayerAPIController {
     }
 
     @PostMapping
-    public ResponseEntity<?> createPlayer(@RequestBody Player player) {
+    public ResponseEntity<Object> createPlayer(@RequestBody Player player) {
         if (player.getName() == null || player.getName().isEmpty()) {
             return new ResponseEntity<>("El nombre no puede estar vacío", HttpStatus.BAD_REQUEST);
         }
@@ -47,7 +47,7 @@ public class PlayerAPIController {
     }
 
     @PostMapping("/{id}/capture-flag")
-    public ResponseEntity<?> captureFlag(@PathVariable Long id) {
+    public ResponseEntity<Object> captureFlag(@PathVariable Long id) {
         Player player = playerService.getPlayerById(id);
 
         
@@ -66,7 +66,7 @@ public class PlayerAPIController {
 
 
     @PostMapping("/{id}/capture-power")
-    public ResponseEntity<?> capturePower(@PathVariable Long id) {
+    public ResponseEntity<Object> capturePower(@PathVariable Long id) {
         Player player = playerService.getPlayerById(id);
 
         
