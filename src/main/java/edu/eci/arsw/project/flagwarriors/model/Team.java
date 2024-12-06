@@ -72,9 +72,6 @@ public class Team {
         this.name = name;
     }
 
-    public List<Player> getPlayers() {
-        return players;
-    }
 
     public void addPlayer(Player player) {
         players.add(player);
