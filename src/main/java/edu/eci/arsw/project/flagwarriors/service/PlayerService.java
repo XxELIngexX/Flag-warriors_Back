@@ -2,7 +2,6 @@ package edu.eci.arsw.project.flagwarriors.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.eci.arsw.project.flagwarriors.model.Player;
@@ -16,15 +15,15 @@ public class PlayerService {
 
     private final PlayerRepository playerRepository;
     private final TeamRepository teamRepository;
-    private static int playerCount = 0;
+    private int playerCount;
  
     public PlayerService(PlayerRepository playerRepository, TeamRepository teamRepository) {
         this.playerRepository = playerRepository;
         this.teamRepository = teamRepository; 
+        this.playerCount = 0;
     }
 
     public Player savePlayer(Player player) {
-        System.out.println("antes de modificar"+player.toString());
 
         List<Team> teams = teamRepository.findAll();
        
@@ -48,7 +47,6 @@ public class PlayerService {
         
         String path = teamToAssign.getPath();
         player.setPath(path);
-        System.out.println(player.toString());
         
         Team managedTeam = teamRepository.findById(teamToAssign.getId())
         .orElseThrow(() -> new RuntimeException("Team not found"));
